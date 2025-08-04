@@ -1,4 +1,40 @@
-# R3LIVE-Dataset  
+# R3LIVE-Dataset
+
+What's inside?
+```
+docker run --rm -v $(pwd):/rosbag -it ros:noetic-ros-base rosbag info /rosbag/degenerate_seq_02.bag
+path:        /rosbag/degenerate_seq_02.bag
+version:     2.0
+duration:    1:41s (101s)
+start:       Aug 21 2021 03:03:18.21 (1629514998.21)
+end:         Aug 21 2021 03:05:00.09 (1629515100.09)
+size:        824.8 MB
+messages:    121934
+compression: none [981/981 chunks]
+types:       dynamic_reconfigure/Config            [958f16a05573709014982821e6822580]
+             dynamic_reconfigure/ConfigDescription [757ce9d44ba8ddd801bb30bc456f946f]
+             geometry_msgs/Vector3Stamped          [7b324c7325e683bf02a9b14b01090ec7]
+             livox_ros_driver/CustomMsg            [e4d6829bdfe657cb6c21a746c86b21a6]
+             sensor_msgs/CompressedImage           [8f7a12909da2c9d3332d540a0977563f]
+             sensor_msgs/Imu                       [6a62c6daae103f4ff57a132d6f95cec2]
+             sensor_msgs/NavSatFix                 [2d3a8cd499b9b4a0249fb98fd05cfa48]
+topics:      /camera/image_color/compressed                           3339 msgs    : sensor_msgs/CompressedImage          
+             /camera/image_color/compressed/parameter_descriptions       1 msg     : dynamic_reconfigure/ConfigDescription
+             /camera/image_color/compressed/parameter_updates            1 msg     : dynamic_reconfigure/Config           
+             /djiros/altitude                                        20376 msgs    : geometry_msgs/Vector3Stamped         
+             /djiros/gps                                              5093 msgs    : sensor_msgs/NavSatFix                
+             /djiros/gps_position                                     5093 msgs    : sensor_msgs/NavSatFix                
+             /djiros/gps_velocity                                     5093 msgs    : geometry_msgs/Vector3Stamped         
+             /djiros/imu                                             40750 msgs    : sensor_msgs/Imu                      
+             /djiros/mag                                              5093 msgs    : geometry_msgs/Vector3Stamped         
+             /djiros/rtk_position                                     5093 msgs    : sensor_msgs/NavSatFix                
+             /djiros/rtk_velocity                                     5093 msgs    : geometry_msgs/Vector3Stamped         
+             /djiros/rtk_yaw                                          5093 msgs    : geometry_msgs/Vector3Stamped         
+             /livox/imu                                              20797 msgs    : sensor_msgs/Imu                      
+             /livox/lidar                                             1019 msgs    : livox_ros_driver/CustomMsg
+```
+
+
 ## 1. Introduction
 This reposity introduces an associate dataset of our work R3LIVE, termed R3LIVE-Dataset. This dataset was collected within the campuses of the University of Hong Kong (HKU) and the Hong Kong University of Science and Technology (HKUST), including 13 sequences that are collected by exploring both indoor and outdoor environments. R3LIVE-dataset is collected in various scenes (e.g., walkway, park, forest, etc) at different times in a day (i.e., morning, noon, and evening), which allows the dataset to capture both structured urban buildings and cluttered field environments with different lighting conditions. The dataset also includes three sequences (degenerate_seq_00/01/02) where the LiDAR or camera (or both) degenerate by occasionally facing the device to a single and/or texture-less plane (e.g., wall, the ground) or visually. The total traveling length reaches 8.4 Km, duration reaching 2.4 hours.
 
